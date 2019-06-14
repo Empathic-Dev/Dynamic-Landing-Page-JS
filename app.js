@@ -79,10 +79,23 @@ function getFocus(){
     focus.textContent = localStorage.getItem('focus');
   }
 }
+// set focus
+function setFocus(e){
+  if(e.type === "keypress"){
+    // make sure 'enter' is pressed
+    if(e.which == 13 || e.keyCode == 13){
+      localStorage.setItem('focus', e.target.innerText);
+      focus.blur();
+    }
+  } else {
+    localStorage.setItem('focus', e.target.innerText);
+  }
+}
 
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName); // onblur event occurs when an object loses focus. aka when the user clicks off the element. its the opposite of onfocus
-
+focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
 
 // run
 showTime();
