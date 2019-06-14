@@ -1,5 +1,7 @@
   // dom elements
-const time = document.getElementById('time'),
+const body = document.querySelector('body'),
+      main = document.querySelector('main'),
+      time = document.getElementById('time'),
       greeting = document.getElementById('greeting'),
       name = document.getElementById('name'),
       focus = document.getElementById('focus');
@@ -10,8 +12,9 @@ const showAmPm = true;
   // show time
 function showTime(){
   console.log('hello time');
-  // let today = new Date(2019, 06, 14, 20, 33, 30),
-  let today = new Date(),
+    // use this to test how the page looks at a specific time
+  let today = new Date(2019, 06, 14, 23, 42, 30),
+  // let today = new Date(),
       hour = today.getHours(),
       min = today.getMinutes()
       sec = today.getSeconds();
@@ -34,21 +37,29 @@ function addZero(n){
 
   //set background & greeting
 function setBgGreet(){
-  // let today = new Date(2019, 06, 14, 20, 33, 30),
-  let today = new Date(),
+    // use this to test how the page looks at a specific time
+  let today = new Date(2019, 06, 14, 23, 42, 30),
+  // let today = new Date(),
       hour = today.getHours();
 
   if(hour < 12){
       // morning
-    document.body.style.backgroundImage = "url('/imgs/morning.jpg')";
+    body.style.backgroundImage = "url('/imgs/morning.jpg')";
+    body.style.backgroundSize = 'cover';
+    main.style.backgroundColor = 'rgba(28,28,28,.7)';
+    // body.style.color = '#1c1c1c';
     greeting.textContent = 'Good Morning ';
   } else if(hour < 18) {
       // afternoon
     document.body.style.backgroundImage = "url('/imgs/afternoon.jpg')";
+    body.style.backgroundSize = 'cover';
+    main.style.backgroundColor = 'rgba(28,28,28,.7)';
     greeting.textContent = 'Good Afternoon ';
   } else {
       // evening
     document.body.style.backgroundImage = "url('/imgs/night.jpg')";
+    body.style.backgroundSize = 'cover';
+    main.style.backgroundColor = 'rgba(28,28,28,.7)';
     greeting.textContent = 'Good Night ';
   }
 }
