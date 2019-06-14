@@ -4,9 +4,13 @@ const time = document.getElementById('time'),
       name = document.getElementById('name'),
       focus = document.getElementById('focus');
 
+  // optional 
+const showAmPm = true;
+
   // show time
 function showTime(){
   console.log('hello time');
+  // let today = new Date(2019, 06, 14, 20, 33, 30),
   let today = new Date(),
       hour = today.getHours(),
       min = today.getMinutes()
@@ -19,7 +23,7 @@ function showTime(){
   hour = hour % 12 || 12;
 
     //output time
-  time.innerHTML = `${hour}<span>:</span>${min}<span>:</span>${addZero(sec)}`;
+  time.innerHTML = `${hour}<span>:</span>${addZero(min)} ${showAmPm ? amPm : ''}`;
 
   setTimeout(showTime, 1000);
 }
@@ -30,6 +34,7 @@ function addZero(n){
 
   //set background & greeting
 function setBgGreet(){
+  // let today = new Date(2019, 06, 14, 20, 33, 30),
   let today = new Date(),
       hour = today.getHours();
 
