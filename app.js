@@ -13,8 +13,8 @@ const showAmPm = true;
 function showTime(){
   console.log('hello time');
     // use this to test how the page looks at a specific time
-  let today = new Date(2019, 06, 14, 23, 42, 30),
-  // let today = new Date(),
+  // let today = new Date(2019, 06, 14, 23, 42, 30),
+  let today = new Date(),
       hour = today.getHours(),
       min = today.getMinutes()
       sec = today.getSeconds();
@@ -38,8 +38,8 @@ function addZero(n){
   //set background & greeting
 function setBgGreet(){
     // use this to test how the page looks at a specific time
-  let today = new Date(2019, 06, 14, 23, 42, 30),
-  // let today = new Date(),
+  // let today = new Date(2019, 06, 14, 23, 42, 30),
+  let today = new Date(),
       hour = today.getHours();
 
   if(hour < 12){
