@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html, body{
-  background: #1c1c1c;
+  background-color: #1c1c1c;
   color: #e6e7e8;
   font-family: 'IBM Plex Mono', monospace;
 }
@@ -27,5 +27,5 @@ h2{
   opacity: .6;
 }
 @media(max-width: 700px){
-  
+
 }
