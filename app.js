@@ -48,6 +48,44 @@ function setBgGreet(){
   }
 }
 
+// get name
+function getName(){
+  console.log('hello name');
+  if(localStorage.getItem('name') === null){
+    name.textContent = '[Enter Name]';
+  } else {
+    name.textContent = localStorage.getItem('name');
+  }
+}
+// set name
+function setName(e){
+  if(e.type === "keypress"){
+    // make sure 'enter' is pressed
+    if(e.which == 13 || e.keyCode == 13){
+      localStorage.setItem('name', e.target.innerText);
+      name.blur();
+    }
+  } else {
+    localStorage.setItem('name', e.target.innerText);
+  }
+}
+
+// get focus
+function getFocus(){
+  console.log('hello focus');
+  if(localStorage.getItem('focus') === null){
+    focus.textContent = '[Enter Focus]';
+  } else {
+    focus.textContent = localStorage.getItem('focus');
+  }
+}
+
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName); // onblur event occurs when an object loses focus. aka when the user clicks off the element. its the opposite of onfocus
+
+
 // run
 showTime();
 setBgGreet();
+getName();
+getFocus();
